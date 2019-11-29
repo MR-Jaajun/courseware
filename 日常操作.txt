@@ -1,0 +1,132 @@
+H5后台
+http://mtest.xgscheng.com/#/merchandetails?10078
+商家后台：
+http://businesstest.xgscheng.com/#/shop_logistics/logisticsInfo
+总后台：
+http://backendtest.xgscheng.com
+
+
+
+
+git config --global user.email "1471262797@qq.com"
+git config --global user.name "small"
+
+
+1, git add .
+2, git commit -m"做了什么"
+3，git checkout f_develop 切换分支
+4. git pull origin f_develop 拉取  如果有错，修改完再次1,2,
+5, git merge small_dev (f_develop) 合并分支
+6, git push origin f_develop 推送
+7, git checkout small_dev
+
+
+git reflog查看版本
+git reset --hard '版本号'
+git checkout --track origin/develop 切换远程分支
+npm install rimraf -g 安装删除
+
+创建 .gitignore 忽略上传的文件
+
+每日拉取
+git checkout f_develop
+git pull origin f_develop
+git checkout small_dev
+git merge f_develop
+
+强制push
+git push --set-upstream origin develop 
+
+git config --global user.name "small"
+git config --global user.email "1471262797@qq.com"
+ssh-keygen?-t?rsa?-C?"1471262797@qq.com"
+
+git config --global core.autocrlf truegit
+
+//切换淘宝镜像
+npm config set registry https://registry.npm.taobao.org
+
+
+npm i vue-amap --save
+import VueAMap from 'vue-amap';
+Vue.use(VueAMap);
+
+// 格式化日期，如月、日、时、分、秒保证为2位数
+function formatNumber (n) {
+    n = n.toString()
+    return n[1] ? n : '0' + n;
+}
+// 参数number为毫秒时间戳，format为需要转换成的日期格式
+function formatTime (number, format) {
+    let time = new Date(number)
+    let newArr = []
+    let formatArr = ['Y', 'M', 'D', 'h', 'm', 's']
+    newArr.push(time.getFullYear())
+    newArr.push(formatNumber(time.getMonth() + 1))
+    newArr.push(formatNumber(time.getDate()))
+
+    newArr.push(formatNumber(time.getHours()))
+    newArr.push(formatNumber(time.getMinutes()))
+    newArr.push(formatNumber(time.getSeconds()))
+
+    for (let i in newArr) {
+        format = format.replace(formatArr[i], newArr[i])
+    }
+    return format;
+}
+
+
+
+//百度图表echarts 使用步骤 （仅适用于vue）
+1.npm安装依赖
+npm install echats --save
+//局部引用
+import echarts from "echarts";
+//全局引入
+在main.js引入
+ import echarts from 'echarts';
+//修改原型链
+Vue.prototype.$eCharts = echarts；
+//然后在你需要的文件内使用
+let myChart = this.$eCharts.init(document.getElementById('myChart'));
+myChart.setOption(options);
+
+css代码：
+<template>
+  <section class="chart-container">
+      <el-row>
+         <el-col :span="12">
+            <div id="myChart" style="width: 1000px;height:500px"></div>
+         </el-col>
+       </el-row>
+  </section>
+</template>
+
+js代码：
+1.在data里定义一个参数
+data(){
+  return{
+     options:"具体参数可以参考百度官方文档"
+  }
+}
+
+2.在method定义一个方法
+myChart(){
+  let myChart = echarts.init(document.getElementById("myChart"));
+    myChart.setOption(options)
+}
+
+3.图表渲染
+（1）静态数据在生命周期mounted时调用myChart()方法。
+（2）如需后台接口数据，则可以在接口调用完成时，在axios成功的回调里调用myChart()方法。
+        或myChart.setOption(options,true),这时就在生命周期update调用myChart()方法，就无需在xios成功的回调里调用。
+        官方文档后发现setOption有3个属性，第二个参数设置为true，置为true之后则不合并数据了，就可以实现刷新数据的效果了（很适合做筛选功能）
+
+
+3.options具体参数
+可以参考官方文档，但官方无注释
+
+4.例子:暂无
+         
+
+
