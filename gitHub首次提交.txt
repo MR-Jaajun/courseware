@@ -1,0 +1,11 @@
+1、初始化git版本库：git init
+
+2、添加文件到本地库：git add .
+
+3、提交文件到本地库：git commit -m "(提交日志)"
+
+4、关联远程库：git remote add origin(可修改) url(你的仓库地址)
+
+5、一般情况需要先拉取一下：git pull origin master 
+
+6、最后一步提交：git push -u origin master
