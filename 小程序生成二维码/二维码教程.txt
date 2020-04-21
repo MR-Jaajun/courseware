@@ -1,0 +1,19 @@
+首先在 utils 文件夹里引入 我发给你的3个js文件
+
+然后在你所需要的文件引入 changeCode.js
+例如：（把里面的方法解构出来）
+barcode 是条形码
+qrcode 是二维码
+const {
+  barcode,
+  qrcode
+} = require('../../../utils/changeCode.js');
+
+引入后调用即可：
+ barcode('barcode','一串数字', 600, 150); //条形码
+  qrcode('qrcode','一串数字' , 500, 500); //二维码
+
+有四个参数
+第一个   固定的
+第二个   后端返回的一串编码
+第三个、第四个 生成图形的宽高 
