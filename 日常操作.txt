@@ -4,7 +4,12 @@ http://mtest.xgscheng.com/#/merchandetails?10078
 http://businesstest.xgscheng.com/#/shop_logistics/logisticsInfo
 总后台：
 http://backendtest.xgscheng.com
-
+商家后台
+http://businesstest.xgscheng.com
+骑手后台
+http://ridertest.xgscheng.com 
+代理商后台
+http://agenttest.xgscheng.com 
 
 
 
@@ -14,9 +19,10 @@ git config --global user.name "small"
 
 1, git add .
 2, git commit -m"做了什么"
+5, git merge small_dev (f_develop) 合并分支
 3，git checkout f_develop 切换分支
 4. git pull origin f_develop 拉取  如果有错，修改完再次1,2,
-5, git merge small_dev (f_develop) 合并分支
+
 6, git push origin f_develop 推送
 7, git checkout small_dev
 
@@ -24,6 +30,7 @@ git config --global user.name "small"
 git reflog查看版本
 git reset --hard '版本号'
 git checkout --track origin/develop 切换远程分支
+ git branch –D 分支名
 npm install rimraf -g 安装删除
 
 创建 .gitignore 忽略上传的文件
@@ -35,6 +42,8 @@ git checkout small_dev
 git merge f_develop
 
 强制push
+git push -f origin develop
+
 git push --set-upstream origin develop 
 
 git config --global user.name "small"
@@ -75,6 +84,43 @@ function formatTime (number, format) {
     return format;
 }
 
+
+css文字删除线：text-decoration:line-through
+css文本超出显示省略号：
+{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+css文本超出显示省略号（多行）：
+{
+
+ display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+/*
+* 获取某个元素下标
+* arr: 传入的数组
+* obj: 需要获取下标的元素
+* */
+getArrayIndex(arr, obj) {
+      var i = arr.length;
+      while (i--) {
+        if (arr[i] === obj) {
+          return i;
+        }
+      }
+      return -1;
+},
+
+vue.js中内联样式style三元表达式
+<span v-bind:style="{'display':config.isHaveSearch ? 'block':'none'}" >搜索</span>
+<div :class="{ 'active': isActive }"></div>
+小程序class中使用三元表达式
+<view class="type-bottom {{changeType==0?'type-none':'type-block'}}">
+</view>
 
 
 //百度图表echarts 使用步骤 （仅适用于vue）
