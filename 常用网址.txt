@@ -1,0 +1,23 @@
+Vant weapp
+https://youzan.github.io/vant-weapp/#/tab 
+
+微信小程序
+https://mp.weixin.qq.com/cgi-bin/wx
+
+css flex布局
+https://www.cnblogs.com/ifat3/p/8698026.html
+
+高德地图开放平台
+https://lbs.amap.com/
+
+腾讯地图
+https://lbs.qq.com/
+
+element UI组件
+https://element.eleme.cn/#/zh-CN
+
+js判断移动端是否安装某款app的多种方法
+https://www.jianshu.com/p/3d1e48b9ec7c
+
+小程序图片转Base64
+https://blog.csdn.net/qq_36875339/article/details/81086205
